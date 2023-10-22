@@ -3,14 +3,15 @@ import Company from "./Company";
 
 import Logo from "../assets/images/logo.svg";
 
-
 import icons1 from "../assets/images/icon-todo.svg";
 import icons2 from "../assets/images/icon-calendar.svg";
 import icons3 from "../assets/images/icon-reminders.svg";
 import icons4 from "../assets/images/icon-planning.svg";
 
 import menuicons from "../assets/images/icon-menu.svg";
-import closemenu from "../assets/images/icon-close-menu.svg";
+
+import MobileNav from "./MobileNav";
+import { useState } from "react";
 
 const Header = () => {
   const features = [
@@ -20,9 +21,13 @@ const Header = () => {
     { name: "Planning", icon: icons4 },
   ];
 
-  const company = [{name:"History"},{name:"Our Team"},{name:"Blog"}]
+  const company = [{ name: "History" }, { name: "Our Team" }, { name: "Blog" }];
+
+  const [mobile, setMobile] = useState(false);
+  const CloseToggle = ()=> setMobile(false)
+
   return (
-    <header className="flex justify-between">
+    <header className="flex relative justify-between">
       <div className="flex gap-x-14">
         <img src={Logo} />
         <ul className="hidden gap-x-12 md:flex">
@@ -39,9 +44,25 @@ const Header = () => {
       <nav className="hidden md:flex ">
         <div className="flex gap-4">
           <div className="cursor-pointer">Login</div>
-          <button className="bg-transparent px-3 py-[2px] border border-black border-1 rounded-md hover:shadow shadow-black">register</button>
+          <button className="bg-transparent px-3 py-[3px] border border-black border-1 rounded-lg hover:shadow shadow-black">
+            register
+          </button>
         </div>
       </nav>
+
+      {/**mobile view */}
+      <img
+        src={menuicons}
+        onClick={() => {
+          setMobile((mobile) => !mobile);
+        }}
+        className="md:hidden"
+      />
+      {mobile && (
+        <div className="md:hidden bg-white shadow-2xl shadow-black/70 top-[-20px] right-[-30px] w-2/3 absolute h-screen">
+          <MobileNav features={features} company={company} close={CloseToggle} />
+        </div>
+      )}
     </header>
   );
 };
