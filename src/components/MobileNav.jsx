@@ -5,7 +5,7 @@ import Feature from "./Feature";
 
 const MobileNav = ({ company, features,close }) => {
   return (
-    <div className="z-2 flex flex-col relative bg-white h-full">
+    <div className="z-20 flex flex-col relative bg-black h-full">
       <img src={closemenu} className="h-8 w-8 absolute top-5 right-7" onClick={close} />
       <div className="absolute top-[6rem] left-6">
         <ul className="flex flex-col gap-5">
