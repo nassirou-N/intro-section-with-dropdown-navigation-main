@@ -24,10 +24,10 @@ const Header = () => {
   const company = [{ name: "History" }, { name: "Our Team" }, { name: "Blog" }];
 
   const [mobile, setMobile] = useState(false);
-  const CloseToggle = ()=> setMobile(false)
+  const CloseToggle = () => setMobile(false);
 
   return (
-    <header className="flex overflow-hidden relative justify-between">
+    <header className="flex relative justify-between">
       <div className="flex gap-x-14">
         <img src={Logo} />
         <ul className="hidden gap-x-12 md:flex">
@@ -51,6 +51,7 @@ const Header = () => {
       </nav>
 
       {/**mobile view */}
+     
       <img
         src={menuicons}
         onClick={() => {
@@ -58,11 +59,17 @@ const Header = () => {
         }}
         className="md:hidden"
       />
+   
       {mobile && (
-        <div className="md:hidden z-10 bg-white shadow-2xl shadow-black/70  right-[-30px] w-2/3 absolute h-screen">
-          <MobileNav features={features} company={company} close={CloseToggle} />
+        <div className="md:hidden transition-all duration-1000 ease-out bg-black shadow-2xl shadow-black/30  right-[-30px] absolute w-2/3 a h-[120vh]">
+          <MobileNav
+            features={features}
+            company={company}
+            close={CloseToggle}
+          />
         </div>
       )}
+
     </header>
   );
 };

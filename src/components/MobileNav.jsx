@@ -5,9 +5,9 @@ import Feature from "./Feature";
 
 const MobileNav = ({ company, features,close }) => {
   return (
-    <div className="z-20 flex flex-col relative bg-black h-full">
+    <div className=" z-20 flex items-start flex-col relative bg-white h-full">
       <img src={closemenu} className="h-8 w-8 absolute top-5 right-7" onClick={close} />
-      <div className="absolute top-[6rem] left-6">
+      <div className=" mt-24 ml-5">
         <ul className="flex flex-col gap-5">
           <li className="px-2">
             <Feature features={features} />
@@ -18,13 +18,14 @@ const MobileNav = ({ company, features,close }) => {
           <li className="ml-[-35px]">Careers</li>
           <li className="ml-[-35px]">About</li>
         </ul>
-        <div className="flex items-center justify-center  flex-col ml-1/2 w-full  mt-10 gap-4">
+        
+      </div>
+      <div className="flex items-center justify-center  flex-col  w-full  mt-20 gap-4">
           <div className="cursor-pointer ">Login</div>
-          <button className="bg-transparent px-10 py-[2px] border border-black border-1 rounded-md hover:shadow shadow-black">
+          <button className="bg-transparent  w-[80%] px-auto py-[2px] border border-black border-1 rounded-md hover:shadow shadow-black">
             register
           </button>
         </div>
-      </div>
     </div>
   );
 };
