@@ -27,7 +27,7 @@ const Header = () => {
   const CloseToggle = () => setMobile(false);
 
   return (
-    <header className="flex relative justify-between">
+    <header className="z-12 flex relative justify-between">
       <div className="flex gap-x-14">
         <img src={Logo} />
         <ul className="hidden gap-x-12 md:flex">
@@ -57,17 +57,19 @@ const Header = () => {
         onClick={() => {
           setMobile((mobile) => !mobile);
         }}
-        className="md:hidden"
+        className="md:hidden z-10"
       />
    
       {mobile && (
-        <div className="md:hidden transition-all duration-1000 ease-out bg-black shadow-2xl shadow-black/30  right-[-30px] absolute w-2/3 a h-[120vh]">
+       
+        <div className="md:hidden z-30 transition-all duration-1000 ease-out bg-white shadow-2xl shadow-black/30  right-[-30px] absolute w-2/3  h-[120vh]">
           <MobileNav
             features={features}
             company={company}
             close={CloseToggle}
           />
         </div>
+      
       )}
 
     </header>

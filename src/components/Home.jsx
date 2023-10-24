@@ -10,16 +10,11 @@ import meet from "../assets/images/client-meet.svg";
 
 const Home = () => {
   return (
-    <div className="flex absolute z-0 overflow-hidden flex-col-reverse md:flex-row  md:mx-14  items-center justify-center">
+    <div className=" flex absolute z-0 overflow-hidden flex-col-reverse md:flex-row  md:mx-14  items-center justify-center">
       {/**left */}
       <div className="flex flex-col md:items-start items-center  mx-auto   md:mr-[10rem] ">
-        <h1 className="hidden md:block text-start text-6xl font-bold w-full">
-          Make <br />
-          remote work
-        </h1>
-        <h1 className="md:hidden text-start px-auto md:tracking-wider text-4xl align-top font-bold md:text-[4rem] md:w-[100%]">
-          Make remote work
-        </h1>
+        <h1 className="hidden md:block text-start text-6xl font-bold w-full">Make <br/>remote work</h1>
+        <h1 className="md:hidden text-start px-auto md:tracking-wider text-4xl align-top font-bold md:text-[4rem] md:w-[100%]">Make remote work</h1>
         <p className=" my-10 md:text-left md:w-96 text-xl text-black/40">
           Get your taeam in sync. no matter your location.Streamline
           processes.create team rituals. and watch productivity soar.
@@ -35,8 +30,8 @@ const Home = () => {
         </div>
       </div>
       {/**right */}
-      <div className="my-20 md:w-[600px] md:h-[600px]">
-        <img src={mobile_hero} className="md:hidden" />
+      <div className=" my-20">
+      <img src={mobile_hero} className="md:hidden z-0" />
         <img src={desktop_hero} className="hidden md:block " />
       </div>
     </div>
